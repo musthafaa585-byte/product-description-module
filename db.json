@@ -1,0 +1,82 @@
+{
+    "productdetail": [
+      {
+        "iD": 1,
+        "title": "T-Shirt",
+        "description": "Soft and breathable cotton T-shirt designed for all-day comfort. Features a classic fit with a durable finish—perfect for casual wear or layering.",
+        "category": "men's clothing",
+        "price": 499
+      },
+      
+      {
+        "id": 2,
+        "title": "Dell-Laptop",
+        "description": "High-performance Dell laptop with Intel Core i5 processor",
+        "category": "electronics",
+        "price": 30000
+      },
+
+      {
+        "id": 3,
+        "title": "parker pens",
+        "description": "Elegant and reliable Parker pen featuring a smooth rollerball tip for effortless writing. Crafted with a premium finish, it's ideal for professionals, gifting, or everyday use.",
+        "category": "stationery",
+        "price": 700
+      },
+       {
+        "id": 4,
+        "title": "chudidhaars",
+        "description": "pure cottons",
+        "category": "women's clothing",
+        "price": 520
+      }, 
+
+      {
+        "id": 5,
+        "title": "erasers",
+        "description": "High-quality eraser with smooth texture for clean and precise erasing. Gentle on paper and leaves minimal residue, perfect for school, office, or art use.",
+        "category": "stationery",
+        "price": 50
+      },
+
+      {
+       "id": 6,
+        "title": "scale",
+        "description": "Flexible and durable plastic scale with clear markings for precise measurements. Ideal for school, office, and engineering use.",
+        "category": "stationery",
+        "price": 80
+      },
+      {
+        "id": 7,
+        "title": "smart watch",
+        "description": "Lightweight, modern design with a vibrant display.",
+        "category": "electronics",
+        "price": 1010
+      },
+
+      {
+        "id": 8,
+        "title": "tablets",
+        "description": "Sleek and lightweight tablet with a vibrant 10.1-inch display.",
+        "category": "electronics",
+        "price": 6000
+      },
+      {
+        "id": 9,
+        "title": "shirts",
+        "description": "Classic cotton shirts designed for comfort and style. Perfect for both casual and formal wear, offering a tailored fit and breathable fabric for all-day ease.",
+        "category": "men's clothing",
+        "price": 800
+      },
+
+      {
+        "id": 10,
+        "title": "pants",
+        "description": "Comfort-fit pants made from durable and breathable fabric. Ideal for daily wear, offering a sleek look with excellent flexibility for work or casual outings.",
+        "category": "men's clothing",
+        "price": 799
+      }
+      
+
+    ]
+  }

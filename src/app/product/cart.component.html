@@ -1,0 +1,33 @@
+
+<h2>Your Cart</h2>
+<div class="cartproduct" *ngIf="cartItem.length > 0; else emptyCart">
+  <ul>
+    <li *ngFor="let item of cartItem; let i = index" class="cart-item">
+      
+      <img
+        [src]="getImageUrls(item.title)"
+        alt="{{ item.title }}"
+        class="cart-image"
+      />
+      <div class="cart-details">
+        <p class="fs-5"><strong>Product Name:</strong> {{ item.title }}</p>
+        <p class="fs-5"><strong>Description:</strong> {{ item.description }}</p>
+        <p class="fs-5"><strong>Category:</strong> {{ item.category }}</p>
+        <p class="fs-5"><strong>Price:</strong> ₹{{ item.price }}</p>
+        <button class="btn btn-danger btn-sm me-2" (click)="removeFromCart(i)">
+          <i class="bi bi-trash"></i> Remove
+        </button>
+        <button class="btn btn-success btn-sm" (click)="checkoutProduct(item)">
+          <i class="bi bi-cart-check"></i> Buy Now
+        </button>
+      </div>
+    </li>
+  </ul>
+  <button *ngIf="selectedCount > 0" class="btn btn-primary">
+    place ({{ selectedCount }}) orders
+  </button>
+</div>
+
+<ng-template #emptyCart>
+  <h4 class="yourcart">Your cart is empty.</h4>
+</ng-template>
