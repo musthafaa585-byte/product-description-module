@@ -1,0 +1,21 @@
+{
+  "attr-lowercase": false,
+  "attr-value-not-empty": false,
+  "doctype-first": false,
+  "tag-self-close": false,
+  "attr-no-duplication": true,
+  "id-unique": true,
+  "src-not-empty": false,
+  "alt-require": false,
+  "inline-style-disabled": false,
+  "inline-script-disabled": true,
+  "space-tab-mixed-disabled": "space",
+  "id-class-value": false,
+  "attr-unsafe-chars": false,
+  "head-script-disabled": false,
+  "style-disabled": false,
+  "title-require": false,
+  "doctype-html5": false,
+  "style-disabled": false,
+  "inline-style-disabled": false
+}

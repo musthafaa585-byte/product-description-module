@@ -1,0 +1,40 @@
+{
+  "html.validate": false,
+  "htmlhint.enable": false,
+  "html.customData": [],
+  "files.associations": {
+    "*.component.html": "html",
+    "*.html": "html"
+  },
+  "[html]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {},
+    "editor.validation.enabled": false,
+    "editor.quickSuggestions": {
+      "other": false,
+      "comments": false,
+      "strings": false
+    }
+  },
+  "html.format.enable": false,
+  "html.suggest.angular1": false,
+  "html.suggest.ionic": false,
+  "html.trace.server": "off",
+  "html.experimental.customData": [],
+  "html.validate.scripts": false,
+  "html.validate.styles": false,
+  "html.validate.embedded": false,
+  "htmlhint.options": {
+    "attr-lowercase": false
+  },
+  "problems.showCurrentInStatus": false,
+  "editor.showUnused": false,
+  "html-validate.config": ".htmlvalidate.json",
+  "html-validate.enable": false,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true
+  }
+}

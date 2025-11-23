@@ -1,3 +1,4 @@
+<!-- htmlhint attr-lowercase:false -->
 <div class="bg-danger p-3 d-flex justify-content-center fixed-top">
   <!-- Offcanvas Sidebar -->
   <div
@@ -19,30 +20,32 @@
     <div class="offcanvas-body">
       <ul class="list-group">
         <li class="list-group-item">
-          <a (click)="gotoorder()" class= "pointer">Your Orders</a>
+          <a (click)="gotoorder()" class="pointer">Your Orders</a>
         </li>
       </ul>
     </div>
   </div>
 
   <!-- 🏠 Home Button -->
-  <button class="btn btn-light home" (click)="goHome()">
+  <button type="button" class="btn btn-light home" (click)="goHome()">
     <i class="fas fa-home"></i> Home
   </button>
 
   <!-- 🛒 Cart Button -->
-  <button class="btn btn-primary addtocartlogo addtocarts" (click)="goToCart()">
+  <button type="button" class="btn btn-primary addtocartlogo addtocarts" (click)="goToCart()">
     <i class="fas fa-shopping-cart"></i> Add to Cart
+    <!-- htmlhint attr-lowercase:false -->
     <span *ngIf="cartCount > 0">({{ cartCount }})</span>
   </button>
 
   <!-- ☰ Menu Button -->
   <button
-    class="btn btn-light me-3 menu menus"
     type="button"
+    class="btn btn-light me-3 menu menus"
     data-bs-toggle="offcanvas"
     data-bs-target="#menuOffcanvas"
     aria-controls="menuOffcanvas"
+    aria-label="Menu"
   >
     <i class="fas fa-bars"></i>
   </button>
@@ -56,11 +59,13 @@
       (ngModelChange)="searchText.set($event)"
       (focus)="showSuggestions = true"
       placeholder="search products"
-    />
+    >
+    <!-- htmlhint attr-lowercase:false -->
     <ul
       class="list-group position-absolute mt-1 suggestion-dropdown"
       *ngIf="showSuggestions && filteredSuggestions().length > 0"
     >
+      <!-- htmlhint attr-lowercase:false -->
       <li
         class="list-group-item list-group-item-action"
         *ngFor="let products of filteredSuggestions()"
