@@ -1,0 +1,122 @@
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    position:relative;
+    left:300px;
+    bottom:100px;
+    
+  }
+  
+  .card {
+    border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  }
+  
+  .card img {
+    height: 160px;
+    object-fit: contain;
+    }
+  
+  .card h5 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 750;
+    
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: rgb(70, 7, 7);
+    font-weight: 750;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 30px 0 15px 0;
+    position: relative;
+  }
+  .margin-bottom1
+  {
+    bottom:50px;
+  }
+
+  .bottom1  
+  {
+    top:410px;
+    left:350px;
+  }
+
+  .bottom2
+  {
+    top:730px;
+    left:350px;
+  }
+
+  .margin-top2
+  {
+    top:50px;
+  }
+  .bg-danger {
+    background-color: #e63946 !important; /* Slightly softer red */
+  }
+
+  input.form-control {
+    border-radius: 25px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: none;
+  }
+
+  .movebottom
+  {
+    position:relative;
+    bottom:150px;
+  }
+
+  .category1
+  {
+    position:relative;
+    bottom:155px;
+    left:300px;
+  }
+.addtocartlogo{
+  position:relative;
+  left:900px;
+}
+
+.menu {
+  position:relative;
+  right: 350px;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.card-title {
+  color: #2c3e50;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.card1 {
+  position:relative;
+  left:300px;
+}
+
+.card2 {
+  position:relative;
+  bottom: 140px; 
+}
+
+.move-product-list {
+   position: relative;
+   bottom: -170px;
+}

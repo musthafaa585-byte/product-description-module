@@ -1,0 +1,200 @@
+<!-- htmlhint attr-lowercase:false -->
+<div class="container push-form-down addressdetails">
+  <h3 class="text-center push-form-down1">Address Details</h3>
+  <!-- htmlhint attr-lowercase:false -->
+  <form [formGroup]="contactform" (ngSubmit)="onSubmit()">
+    <div class="row mb-3">
+      <div class="col-6">
+        <label for="firstname" class="form-label">First Name</label>
+        <input
+          type="text"
+          id="firstname"
+          class="form-control"
+          formControlName="firstName"
+        >
+        <!-- htmlhint attr-lowercase:false -->
+        <div
+          class="text-danger small"
+          *ngIf="!firstname?.valid && (firstname?.touched || firstname?.dirty)"
+        >
+          <!-- htmlhint attr-lowercase:false -->
+          <div *ngIf="firstname?.errors?.['required']">
+            First name is required
+          </div>
+          <!-- htmlhint attr-lowercase:false -->
+          <div *ngIf="firstname?.errors?.['minlength']">
+            Minimum 10 characters are required
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input
+          type="text"
+          id="lastname"
+          class="form-control"
+          formControlName="lastName"
+        >
+        <!-- htmlhint attr-lowercase:false -->
+        <div
+          class="text-danger small"
+          *ngIf="!lastname?.valid && (lastname?.touched || lastname?.dirty)"
+        >
+          <!-- htmlhint attr-lowercase:false -->
+          <div *ngIf="lastname?.errors?.['required']">
+            Last name is required
+          </div>
+          <!-- htmlhint attr-lowercase:false -->
+          <div *ngIf="lastname?.errors?.['minlength']">
+            Minimum 10 characters are required
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="text"
+        id="email"
+        class="form-control"
+        formControlName="email"
+      >
+      <!-- htmlhint attr-lowercase:false -->
+      <div
+        class="text-danger small"
+        *ngIf="!email?.valid && (email?.touched || email?.dirty)"
+      >
+        <!-- htmlhint attr-lowercase:false -->
+        <div *ngIf="email?.errors?.['required']">Email is required</div>
+        <!-- htmlhint attr-lowercase:false -->
+        <div *ngIf="email?.errors?.['pattern']">Invalid Email Format</div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input
+        type="number"
+        id="phone"
+        class="form-control"
+        formControlName="phoneNumber"
+      >
+      <!-- htmlhint attr-lowercase:false -->
+      <div
+        class="text-danger small"
+        *ngIf="!phone?.valid && (phone?.touched || phone?.dirty)"
+      >
+        <!-- htmlhint attr-lowercase:false -->
+        <div *ngIf="phone?.errors?.['required']">Phone number is required</div>
+        <!-- htmlhint attr-lowercase:false -->
+        <div *ngIf="phone?.errors?.['pattern']">Invalid phone number</div>
+      </div>
+    </div>
+
+    <h5 class="mt-4 mb-3">Address</h5>
+    <!-- htmlhint attr-lowercase:false -->
+    <div formGroupName="address">
+      <div class="row mb-3">
+        <div class="col-4">
+          <label class="form-label">City</label>
+          <input type="text" class="form-control" formControlName="city">
+          <!-- htmlhint attr-lowercase:false -->
+          <div
+            class="text-danger small"
+            *ngIf="!city?.valid && (city?.touched || city?.dirty)"
+          >
+            <!-- htmlhint attr-lowercase:false -->
+            <div *ngIf="city?.errors?.['required']">City is required</div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <label class="form-label">Street</label>
+          <input type="text" class="form-control" formControlName="street">
+          <!-- htmlhint attr-lowercase:false -->
+          <div
+            class="text-danger small"
+            *ngIf="!street?.valid && (street?.touched || street?.dirty)"
+          >
+            <!-- htmlhint attr-lowercase:false -->
+            <div *ngIf="street?.errors?.['required']">Street is required</div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <label class="form-label">Pincode</label>
+          <input type="text" class="form-control" formControlName="pincode">
+          <!-- htmlhint attr-lowercase:false -->
+          <div
+            class="text-danger small"
+            *ngIf="!pincode?.valid && (pincode?.touched || pincode?.dirty)"
+          >
+            <!-- htmlhint attr-lowercase:false -->
+            <div *ngIf="pincode?.errors?.['required']">Pincode is required</div>
+            <!-- htmlhint attr-lowercase:false -->
+            <div *ngIf="pincode?.errors?.['pattern']">Invalid pincode</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <!-- Product Details Card -->
+      <!-- htmlhint attr-lowercase:false -->
+      <div class="card shadow-sm mb-4" *ngIf="myproduct">
+        <div class="row g-0">
+          <!-- Image Section -->
+          <div class="col-md-4 d-flex align-items-center justify-content-center p-2">
+            <img
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              alt="Product image"
+              [src]="checkoutimage(myproduct.title)"
+              [alt]="myproduct.title"
+              class="img-fluid rounded product-image"
+            >
+          </div>
+
+          <!-- Product Info Section -->
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ myproduct.title }}</h5>
+              <p class="card-text text-muted">{{ myproduct.description }}</p>
+              <p class="mb-1"><strong>Category:</strong> {{ myproduct.category }}</p>
+              <p class="text-success fs-5 mb-0"><strong>₹{{ myproduct.price }}</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order Summary Card -->
+      <div class="card shadow-sm p-3">
+        <h5 class="text-center mb-3">Order Summary</h5>
+        <div class="d-flex justify-content-between mt-2">
+          <span>Items:</span>
+          <strong>₹{{ itemsAmount }}</strong>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+          <span>Delivery:</span>
+          <strong>₹{{ deliveryCharge }}</strong>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between">
+          <span>Total:</span>
+          <strong class="text-success">₹{{ totalAmount }}</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-3 py-2">
+      <button
+        type="submit"
+        class="btn btn-primary px-5"
+        [disabled]="!contactform.valid"
+      >
+        Place Your Order
+      </button>
+    </div>
+  </form>
+</div>

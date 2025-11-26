@@ -1,0 +1,190 @@
+<div class="container mt-5" style="max-width: 800px">
+  <div class="card shadow-lg border-0 rounded-4">
+    <div
+      class="card-header bg-primary text-white text-center rounded-top-4 py-3"
+    >
+      <h2 class="mb-0">Registration Form</h2>
+    </div>
+
+    <div class="card-body p-4">
+      <form [formGroup]="contactForm">
+        <!-- First Name -->
+        <div class="mb-3">
+          <label for="firstName" class="form-label fs-5">First Name</label>
+          <input
+            type="text"
+            class="form-control w-50"
+            id="firstName"
+            formControlName="firstName"
+            placeholder="Enter your first name"
+          />
+          <div
+            class="text-danger small mt-1"
+            *ngIf="
+              !firstname?.valid && (firstname?.touched || firstname?.dirty)
+            "
+          >
+            <div *ngIf="firstname?.errors?.['required']">
+              First name is required
+            </div>
+          </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="mb-3">
+          <label for="lastName" class="form-label fs-5">Last Name</label>
+          <input
+            type="text"
+            class="form-control w-50"
+            id="lastName"
+            formControlName="lastName"
+            placeholder="Enter your last name"
+          />
+          <div
+            class="text-danger small mt-1"
+            *ngIf="!lastname?.valid && (lastname?.touched || lastname?.dirty)"
+          >
+            <div *ngIf="lastname?.errors?.['required']">
+              Last name is required
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label fs-5">Email</label>
+          <input
+            type="email"
+            class="form-control w-50"
+            id="email"
+            formControlName="email"
+            placeholder="Enter your email"
+          />
+          <div
+            class="text-danger small mt-1"
+            *ngIf="!Email?.valid && (Email?.touched || Email?.dirty)"
+          >
+            <div *ngIf="Email?.errors?.['required']">Email is required</div>
+            <div *ngIf="Email?.errors?.['pattern']">
+              Email format is incorrect
+            </div>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label fs-5">Password</label>
+          <div class="position-relative w-50">
+            <input  [type]="showPassword ? 'text' : 'password'"
+            class="form-control pe-5"
+            id="password"
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+
+             
+            <span
+              class="position-absolute top-50 end-0 translate-middle-y me-2" 
+              style="cursor: pointer;"
+              (click)="togglePassword()"
+            >
+              <i class="bi" [ngClass]="showPassword ? 'bi-eye'  : 'bi-eye-slash'"></i>  
+            </span>
+          </div>
+          <div
+            class="text-danger small mt-1"
+            *ngIf="!Password?.valid && (Password?.touched || Password?.dirty)"
+          >
+            <div *ngIf="Password?.errors?.['required']">
+              Password is required
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label fs-5"
+            >Confirm Password</label
+          >
+          <input [type]= "showPassword ? 'text' : 'password'"
+            class="form-control w-50 pe-5"
+            id="confirmPassword"
+            formControlName="confirmpassword"
+            placeholder="Re-enter your password"
+          />
+          <span
+              class="eyes" 
+              style="cursor: pointer;"
+              (click)="togglesPassword()"
+            >
+              <i class="bi" [ngClass]="showconfirmPassword ? 'bi-eye'  : 'bi-eye-slash'"></i>  
+            </span>
+          <div
+            class="text-danger small mt-1"
+            *ngIf="
+              !Cpassword?.valid && (Cpassword?.touched || Cpassword?.dirty)
+            "
+          >
+            <div class="cp" *ngIf="Cpassword?.errors?.['required']">
+              confirm password is required
+            </div>
+          </div>
+          <div
+            class="text-danger small mt-1 cpmessage"
+            *ngIf="
+              contactForm.hasError('passwordMismatches') &&
+              (Cpassword?.touched || Cpassword?.dirty)
+            "
+          >
+            Confirm password mismatch
+          </div>
+        </div>
+        <!-- Country -->
+        <div class="countries">
+          <label for="country" class="form-label fs-5">Country</label>
+          <select
+            id="country"
+            formControlName="country"
+            class="form-select w-50"
+          >
+            <option value="">Select Country</option>
+            <option value="1">India</option>
+            <option value="2">USA</option>
+            <option value="3">England</option>
+            <option value="4">Singapore</option>
+          </select>
+          <div
+            *ngIf="
+              !countries?.valid && (countries?.touched || countries?.dirty)
+            "
+          >
+            <div
+              class="text-danger small mt-1"
+              *ngIf="countries?.errors?.['required']"
+            >
+              country is required
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class= "submitbtns">
+          <button class="btn btn-success px-4" [disabled]="!contactForm.valid" (click)="Gotosignin()">
+            Submit
+          </button>
+          
+        </div>
+      </form>
+    </div>
+    
+
+    <div class="card-footer text-center bg-light rounded-bottom-4 py-3">
+      <small class="text-muted"
+        >Already have an account?
+        <a routerLink="/signin" class="text-decoration-none"
+          ><button (click)="Gotosignin()">Sign In</button></a
+        ></small
+      >
+    </div>  
+  </div>
+</div>

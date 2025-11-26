@@ -1,0 +1,39 @@
+.addtocarts {
+    position:relative;
+    left: 900px;
+     
+}
+
+.menus {
+    position:relative;
+    right: 350px;
+
+}
+.suggestion-dropdown {
+    background-color: rgb(206, 62, 62);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1050;
+    font-weight: bold;
+    
+  }
+  
+  .suggestion-dropdown .list-group-item:hover {
+    background-color: #0d6efd; /* Bootstrap primary dark blue */
+    color: white; /* Makes text readable */
+  }
+  .searchbox {
+    margin-left: 50px;
+  }
+
+  .home {
+    margin-left: 125px;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }

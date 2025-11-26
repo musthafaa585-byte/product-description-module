@@ -1,0 +1,28 @@
+  <div class="product-card product-detail1">
+    <img
+      [src]="getImageUrl(productssss?.title)"
+      alt="{{ productssss?.title }}"
+      class="product-image"
+    />
+
+    <div class="product-content">
+      <h2 class="product-title">{{ productssss?.title }}</h2>
+      <p class="product-description">{{ productssss?.description }}</p>
+      <p class="product-category">
+        <strong>Category:</strong> {{ productssss?.category }}
+      </p>
+      <p class="product-price">₹{{ productssss?.price }}</p>
+
+      <div class="product-actions">
+        <button class="btn btn-warning" (click)="addToCART(productssss)">
+          Add to Cart
+        </button>
+
+        <a routerLink="/signin">
+          <button class="btn btn-primary" (click)="gotosignin()">
+            Buy Now
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>

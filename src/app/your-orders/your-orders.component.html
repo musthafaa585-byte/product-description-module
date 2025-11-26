@@ -1,0 +1,37 @@
+<div class="container yourorder">
+  <h2>Your Orders</h2>
+
+  <div *ngIf="orders.length > 0; else noOrders">
+    <div *ngFor="let order of orders; let i = index" class="card mb-3 shadow-sm">
+      <div class="row g-0">
+        
+        <!-- Image column -->
+        <div class="col-md-3 d-flex align-items-center justify-content-center p-2">
+          <img
+            [src]="getImageUrls(order.title)"
+            alt="{{ order.title }}"
+            class="img-fluid rounded cart-image"
+          />
+        </div>
+
+        <!-- Details column -->
+        <div class="col-md-9">
+          <div class="card-body">
+            <h5 class="card-title">{{ order.title }}</h5>
+            <p class="card-text">{{ order.description }}</p>
+            <p><strong>Price:</strong> ₹{{ order.price }}</p>
+            <p><strong>Total (incl. delivery):</strong> ₹{{ order.total }}</p>
+
+            <button class="btn btn-danger btn-sm mt-2" (click)="cancelOrder(i)">
+              Cancel Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noOrders>
+    <p class="text-center">You haven’t purchased anything yet.</p>
+  </ng-template>
+</div>

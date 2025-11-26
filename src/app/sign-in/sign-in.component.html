@@ -1,0 +1,59 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%">
+    <h2 class="text-center mb-4">Sign In</h2>
+    <form [formGroup]="signinform" (ngSubmit)="signinsubmit()">
+      <div class="mb-3">
+        <label for="email" class="form-label fw-semibold">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter your email"
+          required
+          formControlName="Email"
+        />
+        <div
+          class="text-danger small"
+          *ngIf="!email?.valid && (email?.touched || email?.dirty)"
+        >
+          <div *ngIf="email?.errors?.['required']">Email is required</div>
+          <div *ngIf="email?.errors?.['pattern']">Email format is invalid</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label fw-semibold">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Enter your password"
+            required
+            formControlName="Password"
+          />
+          <div class="text-danger small"
+            *ngIf="!password?.valid && (password?.touched || password?.dirty)"
+          >
+            <div *ngIf="password?.errors?.['required']">
+              password is required
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button type="submit" 
+          [disabled]="!signinform.valid"
+        class="btn btn-primary w-100" (click)="signinsubmit()"
+        >
+          Sign In
+        </button>
+      
+    </form>
+
+    <p class="text-center mt-3 mb-0">
+      Don't have an account?
+      <a class="text-decoration-none">
+        <button (click)="gotoregistration()">Sign Up</button>
+      </a>
+    </p>
+  </div>
+</div>
